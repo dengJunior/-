@@ -45,8 +45,8 @@
 
 
 
-// 1.2
-
+// 1.2 视频
+#define kEseenceVideoUrl (@"http://s.budejie.com/topic/list/jingxuan/41/bs0315-iphone-4.3/%ld-20.json")
 
 
 // 1.3

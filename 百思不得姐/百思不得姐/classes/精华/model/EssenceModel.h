@@ -10,12 +10,14 @@
 
 
 @class InfoModel;
+@class UserModel;
+@class VideoModel;
+@class CommentModel;
+
+
 @protocol ListModel;
 @protocol TagModel;
 @protocol NSString;
-@class UserModel;
-@class VideoModel;
-
 @protocol CommentModel;
 
 
@@ -44,6 +46,12 @@
 
 @property (nonatomic, strong) NSArray<Optional, CommentModel> * top_comments;
 
+
+//@property (nonatomic, strong) NSArray<Optional, CommentModel> * top_comment;
+
+@property (nonatomic, strong) CommentModel<Optional> * top_comment;
+
+
 @property (nonatomic, strong) NSArray<Optional,TagModel> * tags;
 
 @property (nonatomic, strong) NSString<Optional> * bookmark;
@@ -70,6 +78,10 @@
 
 
 @end
+
+
+
+
 
 
 
@@ -113,13 +125,13 @@
 @interface UserModel : JSONModel
 
 @property (nonatomic, strong) NSArray<Optional, NSString> * header;
-@property (nonatomic, assign) BOOL is_v;
-//@property (nonatomic, strong) NSNumber * is_v;
+//@property (nonatomic, assign) BOOL is_v;
+@property (nonatomic, strong) NSNumber<Optional> * is_v;
 
 @property (nonatomic, strong) NSString<Optional> * uid;
 
-@property (nonatomic, assign) BOOL is_vip;
-//@property (nonatomic, strong) NSNumber * is_vip;
+//@property (nonatomic, assign) BOOL is_vip;
+@property (nonatomic, strong) NSNumber<Optional> * is_vip;
 
 
 @property (nonatomic, strong) NSString<Optional> * name;

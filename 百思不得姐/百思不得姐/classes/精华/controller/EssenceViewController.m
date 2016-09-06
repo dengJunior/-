@@ -8,23 +8,84 @@
 
 #import "EssenceViewController.h"
 #import "EssenceModel.h"
-@interface EssenceViewController ()
+
+#import "EssenceVideoCell.h"
+
+@interface EssenceViewController () <UITableViewDelegate, UITableViewDataSource>
 
 
 @property (nonatomic, assign) NSInteger lastTime ;
 
 
+@property (nonatomic, strong) UITableView * tbView;
+
+
+@property (nonatomic, strong) EssenceModel * dataModel;
 
 
 @end
 
 @implementation EssenceViewController
 
+
+
+
+- (void) createTableView {
+
+
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    
+    self.tbView = [[UITableView alloc ] initWithFrame:  CGRectZero  style:UITableViewStylePlain ];
+    
+    
+    self.tbView.delegate = self;
+    self.tbView.dataSource = self;
+    
+    
+    self.tbView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    
+    [self.view addSubview: self.tbView ];
+
+
+
+    __weak typeof (self) weakSelf = self;
+    [self.tbView mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        
+        make.edges.equalTo(weakSelf.view).with.insets(UIEdgeInsetsMake(64, 0, 49, 0));
+        
+        
+        
+        
+        
+    } ];
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    
+    [self createTableView ] ;
     
     [self downloadData ];
     
@@ -43,6 +104,8 @@
     
      NSLog(@"%@",urlString);
 
+    __weak typeof (self) weakSelf = self;
+    
     [ BDJDownloader downloadWithUrlString:urlString finish:^(NSData *data) {
         
         
@@ -53,6 +116,19 @@
         
         
         NSLog(@"");
+        
+        weakSelf.dataModel = model;
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            
+            [weakSelf.tbView reloadData ];
+            
+            
+        });
+        
+        
+        
         
         
         
@@ -65,12 +141,49 @@
     
     
 
+}
 
 
 
 
 
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+
+
+    return self.dataModel.list.count ;
+
+
+}
+
+
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+
+    static NSString * cellId = @"videoCellId";
+    
+    
+    
+    EssenceVideoCell * cell = [tableView dequeueReusableCellWithIdentifier: cellId];
+    
+    
+    
+    if (!cell){
+    
+    
+        cell = [[[NSBundle mainBundle ] loadNibNamed: @"EssenceVideoCell"  owner:nil options:nil ] lastObject ];
+        
+    }
+    
+    
+    ListModel * model = self.dataModel.list[indexPath.row];
+    
+    
+    cell.model = model;
+
+    return  cell;
 
 
 }
@@ -81,8 +194,14 @@
 
 
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
 
 
+
+    return  500 ;
+
+
+}
 
 
 
