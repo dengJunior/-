@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2325BEEA1D7EFF3C00250811 /* cellmorebtnnormal_24x20_@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2325BEE71D7EFF3C00250811 /* cellmorebtnnormal_24x20_@1x.png */; };
+		2325BEEB1D7EFF3C00250811 /* cellmorebtnnormal_24x20_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2325BEE81D7EFF3C00250811 /* cellmorebtnnormal_24x20_@2x.png */; };
+		2325BEEC1D7EFF3C00250811 /* cellmorebtnnormal_24x20_@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2325BEE91D7EFF3C00250811 /* cellmorebtnnormal_24x20_@3x.png */; };
 		2367F5B81D7D49DE00530B8B /* BDJDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2367F5B71D7D49DE00530B8B /* BDJDownloader.m */; };
 		2367F5BB1D7D4F8900530B8B /* EssenceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2367F5BA1D7D4F8900530B8B /* EssenceModel.m */; };
 		2379CD5D1D7E952B0017E98B /* EssenceVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2379CD5B1D7E952B0017E98B /* EssenceVideoCell.m */; };
@@ -271,6 +274,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2325BEE71D7EFF3C00250811 /* cellmorebtnnormal_24x20_@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cellmorebtnnormal_24x20_@1x.png"; sourceTree = "<group>"; };
+		2325BEE81D7EFF3C00250811 /* cellmorebtnnormal_24x20_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cellmorebtnnormal_24x20_@2x.png"; sourceTree = "<group>"; };
+		2325BEE91D7EFF3C00250811 /* cellmorebtnnormal_24x20_@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cellmorebtnnormal_24x20_@3x.png"; sourceTree = "<group>"; };
 		2367F5B61D7D49DE00530B8B /* BDJDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDJDownloader.h; sourceTree = "<group>"; };
 		2367F5B71D7D49DE00530B8B /* BDJDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDJDownloader.m; sourceTree = "<group>"; };
 		2367F5B91D7D4F8900530B8B /* EssenceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EssenceModel.h; sourceTree = "<group>"; };
@@ -571,6 +577,9 @@
 		2379CD5F1D7E9B3A0017E98B /* Deng */ = {
 			isa = PBXGroup;
 			children = (
+				2325BEE71D7EFF3C00250811 /* cellmorebtnnormal_24x20_@1x.png */,
+				2325BEE81D7EFF3C00250811 /* cellmorebtnnormal_24x20_@2x.png */,
+				2325BEE91D7EFF3C00250811 /* cellmorebtnnormal_24x20_@3x.png */,
 				2379CD601D7E9B3A0017E98B /* cellmorebtnclick_24x20_@1x.png */,
 				2379CD611D7E9B3A0017E98B /* cellmorebtnclick_24x20_@2x.png */,
 				2379CD621D7E9B3A0017E98B /* cellmorebtnclick_24x20_@3x.png */,
@@ -1443,6 +1452,7 @@
 				23C80BFC1D7D072500D4710B /* tabbar-light@2x.png in Resources */,
 				23C80BD51D7D072500D4710B /* navigationbarBackgroundWhite.png in Resources */,
 				2379CD6F1D7E9B3A0017E98B /* cellmorebtnnormalN_24x20_@1x.png in Resources */,
+				2325BEEA1D7EFF3C00250811 /* cellmorebtnnormal_24x20_@1x.png in Resources */,
 				23C80C051D7D072500D4710B /* tabBar_friendTrends_click_icon@3x.png in Resources */,
 				23C80C131D7D072500D4710B /* tabBar_new_icon@2x.png in Resources */,
 				23C80C081D7D072500D4710B /* tabBar_friendTrends_icon@3x.png in Resources */,
@@ -1481,6 +1491,7 @@
 				23C80B5D1D7D072500D4710B /* cell-content-line@2x.png in Resources */,
 				2379CD711D7E9B3A0017E98B /* cellmorebtnnormalN_24x20_@3x.png in Resources */,
 				23C80BA31D7D072500D4710B /* friendsTrend_login@2x.png in Resources */,
+				2325BEEB1D7EFF3C00250811 /* cellmorebtnnormal_24x20_@2x.png in Resources */,
 				23C80B4A1D7D072500D4710B /* AppIcon29x29@3x.png in Resources */,
 				23C80BDF1D7D072500D4710B /* publish-audio.png in Resources */,
 				23C80BFF1D7D072500D4710B /* tabBar_essence_click_icon@3x.png in Resources */,
@@ -1493,6 +1504,7 @@
 				23C80C111D7D072500D4710B /* tabBar_new_click_icon@3x.png in Resources */,
 				23C80BA21D7D072500D4710B /* friendsTrend_login.png in Resources */,
 				23C80BEF1D7D072500D4710B /* publish-video@2x.png in Resources */,
+				2325BEEC1D7EFF3C00250811 /* cellmorebtnnormal_24x20_@3x.png in Resources */,
 				23C80B471D7D072500D4710B /* AppIcon29x29.png in Resources */,
 				23C80BE61D7D072500D4710B /* publish-picture@2x.png in Resources */,
 				23C80B851D7D072500D4710B /* playButtonClick@2x.png in Resources */,

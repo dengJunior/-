@@ -87,49 +87,6 @@
 
 
 
-- (IBAction)favouriteAction:(id)sender {
-}
-
-
-
-
-
-
-
-
-- (IBAction)videoPlayAction:(id)sender {
-}
-
-
-
-
-
-- (IBAction)loveAction:(id)sender {
-}
-
-
-
-
-
-- (IBAction)hateAction:(id)sender {
-}
-
-
-
-
-- (IBAction)shareAction:(id)sender {
-}
-
-
-
-
-
-- (IBAction)commentAction:(id)sender {
-}
-
-
-
-
 - (void) setModel: (ListModel *) model {
 
 
@@ -310,6 +267,56 @@
 
 
 
+
+- (IBAction)favouriteAction:(id)sender {
+}
+
+
+
+
+
+
+
+
+- (IBAction)playVideo:(id)sender {
+}
+
+
+
+
+
+
+
+- (IBAction)loveAction:(id)sender {
+}
+
+
+
+
+
+
+
+
+
+
+- (IBAction)hateAction:(id)sender {
+}
+
+
+
+
+
+
+- (IBAction)shareAction:(id)sender {
+}
+
+
+
+
+
+
+- (IBAction)commentAction:(id)sender {
+}
 
 
 
