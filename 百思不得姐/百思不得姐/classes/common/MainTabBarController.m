@@ -122,8 +122,7 @@
 
 
 
-
-
+//“今天 又好了， 好奇怪。    完善了  pageViewController,   新增了 headView（ 一个scrollView）  ”
 - (void) createViewControllers {
     [self addViewController:@"EssenceViewController" withTitle:@"精华" withImageName:@"tabBar_essence_icon" withSelectedImageName:@"tabBar_essence_click_icon" ];
     
