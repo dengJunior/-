@@ -42,6 +42,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *playTimeLabel;
 
+@property (weak, nonatomic) IBOutlet UIView *commentView;
 
 @property (weak, nonatomic) IBOutlet UILabel *commentLabel;
 
@@ -78,11 +79,37 @@
 
 
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *videoImageHCon;
+
+
+
+
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *commentViewHCon;
+
+
+
+
+
+
+
+
+
+
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *commentViewYCon;
+
+
 @end
 
 
 
 @implementation EssenceVideoCell
+
+
+
+
+
 
 
 
@@ -129,6 +156,9 @@
     
     
     
+    
+//    self.videoImageHCon.constant = (self.videoImageView.frame.size.width) * model.video.height/model.video.width;
+    self.videoImageHCon.constant = self.videoImageView.frame.size.width;
     self.playNumLabel.text = [ NSString stringWithFormat: @"%ld播放" ,  model.video.playcount ];
     
     
@@ -182,56 +212,23 @@
     
     /*
     if (model.video.duration > 3600) {
-    
-    
         [timeStr appendFormat: @"%2ld:", model.video.duration/3600 ];
-        
-        
-        
-    
     }
-    
     if (model.video.duration > 60 ) {
-    
         NSInteger minuteNum = model.video.duration ;
-        
         if (minuteNum > 3600){
-        
-        
-        
-        
             minuteNum = minuteNum % 3600;
-        
-        
         }
-        
-        
         [timeStr appendFormat: @"%02ld: ", minuteNum/60 ];
-    
-    
-    
-    
-    
     }
-    
+    model.top_comments
     */
-    
-    
-    
-    
-//    model.top_comments
+
     
     
 
     self.playTimeLabel.text = timeStr;
     
-    
-    
-    
-    NSString * commentStr = [ NSString stringWithFormat: @"%@: %@", model.top_comment.u.name, model.top_comment.content ];
-    self.commentLabel.text = commentStr;
-
-
     
     
     
@@ -261,6 +258,44 @@
     
     [self.commentButton setTitle: model.comment  forState:UIControlStateNormal ];
     [self.commentButton setTitle: model.comment  forState:UIControlStateSelected ];
+    
+    [self layoutIfNeeded ];    //强制 cell 刷新，  也就是 按照数据， 全部显示 一次 cell.
+ 
+    if (!model.top_comment){
+        
+        
+        self.commentViewHCon.constant = 0;
+        
+        self.commentViewYCon.constant = 0;
+        
+       
+        self.commentView.hidden = YES;
+        
+        
+    }else {
+        
+        
+        
+        NSString * commentStr = [ NSString stringWithFormat: @"%@: %@", model.top_comment.u.name, model.top_comment.content ];
+        self.commentView.hidden = NO;
+        
+        
+        
+        
+        self.commentLabel.text = commentStr;
+        
+        self.commentViewYCon.constant = 14;
+        
+        
+        self.commentViewHCon.constant = self.commentLabel.height + 8;
+        
+        
+        
+    }
+
+    
+    NSLog(@"%lf", CGRectGetMaxY(self.loveButton.frame));
+    model.cellHeight =  @(CGRectGetMaxY(self.loveButton.frame) + 10);   //加 @ , 转化为 对象。
     
     
 }
@@ -324,10 +359,75 @@
 
 
 
+- (void)layoutSubviews {
+
+    [super layoutSubviews ];
+    
+    
+    if (!_model.comment ){
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

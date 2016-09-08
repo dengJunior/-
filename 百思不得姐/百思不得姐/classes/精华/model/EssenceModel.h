@@ -25,7 +25,7 @@
 
 @interface EssenceModel : JSONModel
 @property (nonatomic, strong) InfoModel<Optional> * info;
-@property (nonatomic, strong) NSArray<ListModel,Optional> * list;
+@property (nonatomic, strong) NSMutableArray<ListModel,Optional> * list;
 @end
 
 
@@ -39,6 +39,12 @@
 
 
 @interface ListModel : JSONModel
+
+
+
+
+
+
 
 @property (nonatomic, assign) NSInteger status;
 @property (nonatomic, strong) NSString<Optional> * comment;
@@ -76,6 +82,15 @@
 
 
 
+
+//@property (nonatomic, assign) CGFloat cellHeight;//后来 增加    ,   与 JSONModel 相冲突
+
+
+
+
+
+//@property (nonatomic, assign) NSNumber<Optional> * cellHeight;   这样 是 错的， 会崩溃的。  不能用 assign.
+@property (nonatomic, strong) NSNumber<Optional> * cellHeight;
 
 @end
 

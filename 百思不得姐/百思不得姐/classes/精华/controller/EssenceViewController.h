@@ -7,7 +7,14 @@
 //
 
 #import "BaseViewController.h"
-
+@class SubMenuModel;
 @interface EssenceViewController : BaseViewController
+
+
+
+@property (nonatomic, strong) SubMenuModel * subModel;
+
+
+
 
 @end

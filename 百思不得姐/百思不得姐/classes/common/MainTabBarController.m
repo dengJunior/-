@@ -8,7 +8,10 @@
 
 #import "MainTabBarController.h"
 #import "BDJTabBar.h"
+#import "MenuModel.h"
 
+#import "EssenceViewController.h"
+#import "NewsViewController.h"
 
 @interface MainTabBarController ()
 
@@ -22,7 +25,74 @@
     [self createViewControllers ];
     [self setValue:[[BDJTabBar alloc ] init ] forKey: @"tabBar" ];
     
+    
+    [self downloadNavList ];
+    
+    
+    
 }
+
+
+
+
+- (void) downloadNavList {
+
+    __weak typeof (self) weakSelf = self;
+    
+    
+    [ BDJDownloader downloadWithUrlString:kNavBarListUrl finish:^(NSData *data) {
+        
+        //万一 数组 是 空的， 要先 判断一下。
+        MenuModel * model = [[MenuModel alloc ] initWithData:  data  error:  nil ];
+        
+  //不能 这样
+//        EssenceViewController * essenceCtrl = (EssenceViewController *) [weakSelf.viewControllers firstObject];
+//        
+//        essenceCtrl.subModel = model.menus[0];
+ 
+        
+        UINavigationController * essenceNavigationCtrl = (UINavigationController *) [ weakSelf.viewControllers firstObject ];
+        EssenceViewController * essenceControl = ( EssenceViewController * ) [ essenceNavigationCtrl.viewControllers firstObject ];
+        
+        essenceControl.subModel = model.menus[0];
+        
+        
+        
+        
+        UINavigationController * newsNavigationCtrl = (UINavigationController *) weakSelf.viewControllers[1] ;
+        //   (UINavigationController *) [ weakSelf.viewControllers firstObject ]
+        
+        NewsViewController * newsControl = (NewsViewController *) [newsNavigationCtrl.viewControllers firstObject];
+        
+        newsControl.subModel = model.menus[1];
+        //model.menus[0]
+        
+        
+        
+        
+        
+        
+    } failure:^(NSError *error) {
+        NSLog(@"%@", error.description);
+    } ];
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
 
 
 

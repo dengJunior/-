@@ -8,6 +8,12 @@
 
 #import "BaseViewController.h"
 
+@class SubMenuModel;
+
 @interface NewsViewController : BaseViewController
+
+
+@property (nonatomic, strong) SubMenuModel * subModel;
+
 
 @end

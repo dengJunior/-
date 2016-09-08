@@ -17,7 +17,7 @@
 
 
 
-@property (nonatomic, strong) ListModel * model;
+@property (nonatomic, strong) ListModel * model;  //  正好 是 strong, 正好不是 copy
 
 
 
