@@ -8,14 +8,45 @@
 
 #import "NavTitleView.h"
 #import "UIButton+Util.h"
+
+#import "MenuModel.h"
+
+
+@interface NavTitleView ()
+
+@property (nonatomic, strong) NSArray * titlesModels;
+
+
+
+@property (nonatomic, strong) UIView * lineView ;
+
+
+@property (nonatomic, strong) UIView * containerView;
+
+@end
+
+
+
+
+
+
+
 @implementation NavTitleView
 
 
-- (instancetype)initWithTitles:(NSArray *)titles rightImageName:(NSString *)imageName rightHighlightImageName:(NSString *)highlightImageName {
+- (instancetype)initWithTitles:(NSArray *)titleModels rightImageName:(NSString *)imageName rightHighlightImageName:(NSString *)highlightImageName {
 
-    if (self = [super init]){
     
+    
+    
+    
+    if (self = [super init]){
         
+        
+        if (titleModels.count > 0){
+        
+    
+        self.titlesModels = titleModels;
         UIButton * rightBtn = [ UIButton createBtnTitle:nil withImageName:imageName withSelectedImageName:nil withHighlightedImageName:highlightImageName target:self acton:@selector(clickRight) ];
         
         
@@ -24,9 +55,9 @@
         __weak typeof (self) weakSelf = self ;
         [rightBtn mas_makeConstraints:^(MASConstraintMaker *make) {
             
-            make.top.equalTo(weakSelf).offset(6);
-            make.right.equalTo(weakSelf).offset(-20);
-            make.size.mas_equalTo(CGSizeMake(40, 32));//    不能是 equal      或者， 设置 一个 宏。
+            make.top.equalTo(weakSelf).offset(8);
+            make.right.equalTo(weakSelf).offset(-10);
+            make.size.mas_equalTo(CGSizeMake(30, 30));//    不能是 equal      或者， 设置 一个 宏。
             
             
         }];
@@ -36,7 +67,7 @@
         
         
         UIScrollView * scrollView = [[UIScrollView alloc ] init ];
-        
+        scrollView.showsHorizontalScrollIndicator = NO;
         [self addSubview: scrollView ];
         
         
@@ -70,56 +101,36 @@
             
         }];
         
-        CGFloat width = 60;     //  40
-        CGFloat spaceX = 20; //  30
-        
+        CGFloat width = self.btnWidth;
+        CGFloat spaceX = self.btnSpaceX;
         
         UIView * lastView = nil;
         
         
-        for (int i = 0; i < titles.count; i++){
+        for (int i = 0; i < titleModels.count; i++){
         
-            
-            NSString * title = titles[i];
-            
-            UIButton * btn = [UIButton createBtnTitle:title withImageName:nil withSelectedImageName:nil withHighlightedImageName:nil target:self acton:@selector(clickTitle) ];
-            
+            NavTitleModel * model = titleModels[i];
+//            NSLog(@"===%@",model);
+            NSString * title = model.name;
+            UIButton * btn = [UIButton createBtnTitle:title withImageName:nil withSelectedImageName:nil withHighlightedImageName:nil target:self acton:@selector(clickTitle:) ];
+            [btn setTitleColor:[ UIColor grayColor ] forState: UIControlStateNormal ];
+            [btn setTitleColor:[ UIColor redColor ] forState: UIControlStateSelected ];
+
+            btn.tag = 300 + i;
             [containerView addSubview: btn ];
-            
-            
+
             [btn mas_makeConstraints:^(MASConstraintMaker *make) {
                
-                make.top.bottom.equalTo(containerView);
-                
+                make.top.and.bottom.equalTo(containerView);
                 make.width.mas_equalTo(width);
-                
                 if (i == 0){
-                
-                
                     make.left.equalTo(containerView);
-                
-                
-                
                 }else{
-                
-                
-                
                     make.left.equalTo(lastView.mas_right).offset(spaceX);
-                
-                
                 }
-                
-                
             }];
-            
-        
-        
-        
+
             lastView = btn;
-        
-        
-        
-        
         }
         
         
@@ -133,10 +144,32 @@
         
         
         
+        self.lineView = [[UIView alloc ] init ];
+        
+        self.lineView.backgroundColor = [UIColor redColor ];
+        
+        [containerView addSubview: self.lineView ];
+        
+        
+        [self.lineView mas_makeConstraints:^(MASConstraintMaker *make) {
+           
+            
+            make.left.mas_equalTo(0);
+            make.width.mas_equalTo(width);
+            make.height.mas_equalTo(2);
+            make.bottom.equalTo(containerView);
+            
+            
+            
+            
+        }];
         
         
         
         
+        self.containerView = containerView;// 初始化 赋值。   在这里 赋值， 也可以。
+        
+        }
         
         
     }
@@ -146,10 +179,135 @@
 
 }
 
-- (void) clickTitle{}
 
 
-- (void) clickRight{}
+- (CGFloat) btnWidth{
+    return 60;
+}
+
+
+- (CGFloat) btnSpaceX{
+    return 20;
+}
+
+
+
+
+
+
+
+- (void) clickRight{
+
+
+
+    [self.delegate didClickRightButton: self ];
+ 
+
+
+}
+
+
+
+- (void) setSelectedIndex:(NSInteger)selectedIndex{
+
+    if (_selectedIndex != selectedIndex){
+
+        UIButton * lastBtn = [ self.containerView viewWithTag: 300 + _selectedIndex ];
+        
+        
+        lastBtn.selected = NO;
+        
+        
+        
+        
+        
+        UIButton * curBtn = [ self.containerView viewWithTag: 300 + selectedIndex ];
+        
+        
+        curBtn.selected = YES;
+        
+        CGFloat btnW = self.btnWidth;
+        CGFloat btnSpaceX = self.btnSpaceX;
+        
+        
+    
+        [self.lineView mas_updateConstraints:^(MASConstraintMaker *make) {
+            
+//            make.left.equalTo(curBtn); 不行滴
+            
+            CGFloat x = (btnW + btnSpaceX)* selectedIndex ;
+            
+            make.left.mas_equalTo(x);
+            
+            
+        }];
+    
+        UIScrollView * scrollView = ( UIScrollView * ) self.containerView.superview;
+        
+        CGFloat offsetX = curBtn.centerX - scrollView.centerX ;
+        
+        
+        if (offsetX < 0){
+        
+            offsetX = 0;
+        
+        
+        }
+        
+        if (offsetX > scrollView.contentSize.width - scrollView.bounds.size.width){
+        
+            
+            offsetX = scrollView.contentSize.width - scrollView.bounds.size.width;
+        
+        
+        
+        }
+        
+        
+        scrollView.contentOffset = CGPointMake(offsetX, 0);
+        
+        
+    }
+    
+    _selectedIndex = selectedIndex;
+//    self.selectedIndex = selectedIndex;     死循环
+
+}
+
+
+
+
+- (void) clickTitle: (UIButton * ) currentBtn {
+
+    NSInteger index = currentBtn.tag - 300;
+    
+    
+    if  (self.selectedIndex != index  )  {
+        self.selectedIndex = index;
+        
+        NavTitleModel * model = self.titlesModels[index];
+        
+        [ self.delegate navTitleView:self didClickButtonAtIndex:index withUrlString: model.url ];
+    
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+   
+    
+    
+
+
+
+}
+
+
+
 
 
 

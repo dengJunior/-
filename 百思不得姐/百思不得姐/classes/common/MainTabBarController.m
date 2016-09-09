@@ -29,8 +29,82 @@
     [self downloadNavList ];
     
     
+    BOOL flag = [[NSFileManager defaultManager ] fileExistsAtPath: [ self  navTitleFilePath ] ];
+    
+    
+    if (flag) {
+    
+        NSData * data = [NSData dataWithContentsOfFile: [ self   navTitleFilePath ] ];
+        
+        
+        [self parseData: data ];
+    
+    
+    
+    
+    
+    }
+    
+    [self downloadNavList ];
+    
     
 }
+
+
+
+- (void) parseData: (NSData * ) data {
+
+    
+    __weak typeof (self) weakSelf = self;
+
+    //万一 数组 是 空的， 要先 判断一下。
+    MenuModel * model = [[MenuModel alloc ] initWithData:  data  error:  nil ];
+    
+    //不能 这样
+    //        EssenceViewController * essenceCtrl = (EssenceViewController *) [weakSelf.viewControllers firstObject];
+    //
+    //        essenceCtrl.subModel = model.menus[0];
+    
+    
+    UINavigationController * essenceNavigationCtrl = (UINavigationController *) [ weakSelf.viewControllers firstObject ];
+    EssenceViewController * essenceControl = ( EssenceViewController * ) [ essenceNavigationCtrl.viewControllers firstObject ];
+//    essenceControl.s
+    
+    essenceControl.subModel = model.menus[0];
+    
+    
+    
+    
+    UINavigationController * newsNavigationCtrl = (UINavigationController *) weakSelf.viewControllers[1] ;
+    //   (UINavigationController *) [ weakSelf.viewControllers firstObject ]
+    
+    NewsViewController * newsControl = (NewsViewController *) [newsNavigationCtrl.viewControllers firstObject];
+    
+    newsControl.subModel = model.menus[1];
+    //model.menus[0]
+    
+
+}
+
+
+
+- (NSString *) navTitleFilePath {
+
+    NSString * docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory ,  NSUserDomainMask , YES)  lastObject ];
+    
+    
+    NSString * filePath = [docPath stringByAppendingPathComponent: @"navTitle" ];
+    
+
+
+    return filePath;
+
+
+}
+
+
+
+
 
 
 
@@ -42,32 +116,19 @@
     
     [ BDJDownloader downloadWithUrlString:kNavBarListUrl finish:^(NSData *data) {
         
-        //万一 数组 是 空的， 要先 判断一下。
-        MenuModel * model = [[MenuModel alloc ] initWithData:  data  error:  nil ];
         
-  //不能 这样
-//        EssenceViewController * essenceCtrl = (EssenceViewController *) [weakSelf.viewControllers firstObject];
-//        
-//        essenceCtrl.subModel = model.menus[0];
- 
-        
-        UINavigationController * essenceNavigationCtrl = (UINavigationController *) [ weakSelf.viewControllers firstObject ];
-        EssenceViewController * essenceControl = ( EssenceViewController * ) [ essenceNavigationCtrl.viewControllers firstObject ];
-        
-        essenceControl.subModel = model.menus[0];
+        BOOL flag = [[NSFileManager defaultManager ] fileExistsAtPath: [ weakSelf  navTitleFilePath] ];
         
         
+        if (!flag){
         
         
-        UINavigationController * newsNavigationCtrl = (UINavigationController *) weakSelf.viewControllers[1] ;
-        //   (UINavigationController *) [ weakSelf.viewControllers firstObject ]
-        
-        NewsViewController * newsControl = (NewsViewController *) [newsNavigationCtrl.viewControllers firstObject];
-        
-        newsControl.subModel = model.menus[1];
-        //model.menus[0]
+            [weakSelf parseData: data ];
         
         
+        }
+        
+        [data writeToFile: [ self  navTitleFilePath  ] atomically: YES ];
         
         
         

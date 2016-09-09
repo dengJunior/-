@@ -7,12 +7,50 @@
 //
 
 #import <UIKit/UIKit.h>
+@class NavTitleView;
+
+@protocol NavTitleViewDelegate <NSObject>
+
+
+
+- (void) navTitleView: (NavTitleView * ) navTitleView didClickButtonAtIndex: (NSInteger ) index withUrlString: (NSString * ) urlString;
+
+
+
+- (void) didClickRightButton: (NavTitleView * ) navTitleView;
+
+
+
+
+
+
+
+@end
+
+
+
+
+
+
+
+
+
+
+
 
 @interface NavTitleView : UIView
 
+- (instancetype) initWithTitles: (NSArray *) titleModels rightImageName: (NSString *) imageName  rightHighlightImageName: (NSString *) highlightImageName ;
 
-- (instancetype) initWithTitles: (NSArray *) titles rightImageName: (NSString *) imageName  rightHighlightImageName: (NSString *) highlightImageName ;
 
+
+@property (nonatomic, weak) id <NavTitleViewDelegate> delegate ;
+
+
+
+
+
+@property (nonatomic, assign) NSInteger selectedIndex ;
 
 
 

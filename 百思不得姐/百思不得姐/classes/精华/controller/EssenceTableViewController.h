@@ -10,4 +10,10 @@
 
 @interface EssenceTableViewController : UIViewController
 
+
+@property (nonatomic, strong) NSString * urlPrefix ;
+
+
+
+
 @end

@@ -7,13 +7,11 @@
 //
 
 #import "BaseViewController.h"
-
-@class SubMenuModel;
-
-@interface NewsViewController : BaseViewController
+#import "BDJNavTitleViewController.h"
 
 
-@property (nonatomic, strong) SubMenuModel * subModel;
+@interface NewsViewController : BDJNavTitleViewController
+
 
 
 @end

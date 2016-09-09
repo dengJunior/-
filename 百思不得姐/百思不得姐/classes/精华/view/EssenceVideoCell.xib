@@ -66,13 +66,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ZT-Tz-BtA" userLabel="playNumLabel">
-                                <rect key="frame" x="15" y="178" width="42" height="21"/>
+                                <rect key="frame" x="10" y="184" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Bp-FS-rEt" userLabel="playTimeLabel">
-                                <rect key="frame" x="318" y="178" width="42" height="21"/>
+                                <rect key="frame" x="323" y="184" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -184,10 +184,11 @@
                             <constraint firstItem="L73-bC-qoz" firstAttribute="height" secondItem="DK7-Qn-KUR" secondAttribute="height" id="6c4-f1-hb2"/>
                             <constraint firstItem="Nae-9P-4QW" firstAttribute="top" secondItem="tsV-N3-3xq" secondAttribute="top" constant="6" id="7cE-Ci-gyZ"/>
                             <constraint firstAttribute="trailing" secondItem="ksO-x3-Ih0" secondAttribute="trailing" constant="20" id="7dt-fv-N80"/>
+                            <constraint firstItem="3Bp-FS-rEt" firstAttribute="bottom" secondItem="7Mo-ql-8cf" secondAttribute="bottom" id="93b-2E-iwf"/>
                             <constraint firstItem="DK7-Qn-KUR" firstAttribute="leading" secondItem="tsV-N3-3xq" secondAttribute="leading" id="9Pc-3H-BlZ"/>
                             <constraint firstItem="kHz-lo-dVl" firstAttribute="centerY" secondItem="7Mo-ql-8cf" secondAttribute="centerY" id="BSL-hQ-ihl"/>
+                            <constraint firstItem="1ZT-Tz-BtA" firstAttribute="leading" secondItem="7Mo-ql-8cf" secondAttribute="leading" id="BhR-pQ-kfw"/>
                             <constraint firstItem="Bmx-oT-6PW" firstAttribute="width" secondItem="DK7-Qn-KUR" secondAttribute="width" id="Ezw-To-xCA"/>
-                            <constraint firstItem="gFi-9c-SkM" firstAttribute="top" secondItem="3Bp-FS-rEt" secondAttribute="bottom" constant="20" id="G77-CA-D3E"/>
                             <constraint firstItem="zCS-En-jGg" firstAttribute="leading" secondItem="tsV-N3-3xq" secondAttribute="leading" constant="10" id="GwQ-mw-JZ9"/>
                             <constraint firstItem="cdQ-9r-gv0" firstAttribute="leading" secondItem="zCS-En-jGg" secondAttribute="trailing" constant="10" id="H3p-NW-cKN"/>
                             <constraint firstItem="zCS-En-jGg" firstAttribute="top" secondItem="tsV-N3-3xq" secondAttribute="top" constant="6" id="ILd-dv-SBJ"/>
@@ -196,21 +197,20 @@
                             <constraint firstAttribute="trailing" secondItem="G1c-Ja-90z" secondAttribute="trailing" constant="10" id="MTa-AB-HND"/>
                             <constraint firstItem="7Mo-ql-8cf" firstAttribute="leading" secondItem="tsV-N3-3xq" secondAttribute="leading" constant="10" id="WA2-hx-dfr"/>
                             <constraint firstItem="xAE-5d-Wr0" firstAttribute="width" secondItem="DK7-Qn-KUR" secondAttribute="width" id="YCH-ZO-psD"/>
+                            <constraint firstItem="1ZT-Tz-BtA" firstAttribute="bottom" secondItem="7Mo-ql-8cf" secondAttribute="bottom" id="ZCD-Cr-JiN"/>
                             <constraint firstItem="gFi-9c-SkM" firstAttribute="leading" secondItem="tsV-N3-3xq" secondAttribute="leading" constant="10" id="ZEU-gl-1HL"/>
                             <constraint firstItem="Bmx-oT-6PW" firstAttribute="height" secondItem="DK7-Qn-KUR" secondAttribute="height" id="ZPj-8X-sw4"/>
                             <constraint firstItem="cdQ-9r-gv0" firstAttribute="top" secondItem="Nae-9P-4QW" secondAttribute="bottom" id="a50-io-Dnu"/>
                             <constraint firstItem="68c-74-ah0" firstAttribute="leading" secondItem="tsV-N3-3xq" secondAttribute="leading" constant="10" id="aKu-Cw-J6t"/>
                             <constraint firstItem="ksO-x3-Ih0" firstAttribute="top" secondItem="tsV-N3-3xq" secondAttribute="top" constant="6" id="bKJ-DW-esH"/>
                             <constraint firstItem="Bmx-oT-6PW" firstAttribute="top" secondItem="G1c-Ja-90z" secondAttribute="bottom" id="cht-Ct-RWQ"/>
-                            <constraint firstAttribute="trailing" secondItem="3Bp-FS-rEt" secondAttribute="trailing" constant="15" id="epE-CX-eHQ"/>
-                            <constraint firstItem="1ZT-Tz-BtA" firstAttribute="leading" secondItem="tsV-N3-3xq" secondAttribute="leading" constant="15" id="f5S-vE-sCz"/>
+                            <constraint firstItem="3Bp-FS-rEt" firstAttribute="trailing" secondItem="7Mo-ql-8cf" secondAttribute="trailing" id="iaf-jI-URG"/>
                             <constraint firstItem="Nae-9P-4QW" firstAttribute="leading" secondItem="zCS-En-jGg" secondAttribute="trailing" constant="10" id="inO-93-TcM"/>
                             <constraint firstItem="Bmx-oT-6PW" firstAttribute="leading" secondItem="xAE-5d-Wr0" secondAttribute="trailing" id="j0S-7k-TpG"/>
                             <constraint firstItem="7Mo-ql-8cf" firstAttribute="top" secondItem="68c-74-ah0" secondAttribute="bottom" constant="14" id="jX3-0K-Ff9"/>
                             <constraint firstItem="xAE-5d-Wr0" firstAttribute="height" secondItem="DK7-Qn-KUR" secondAttribute="height" id="jhD-38-Oaz"/>
                             <constraint firstAttribute="trailing" secondItem="68c-74-ah0" secondAttribute="trailing" constant="10" id="mlc-hL-FC8"/>
                             <constraint firstItem="68c-74-ah0" firstAttribute="top" secondItem="cdQ-9r-gv0" secondAttribute="bottom" constant="14" id="nzD-Ez-ks5"/>
-                            <constraint firstItem="gFi-9c-SkM" firstAttribute="top" secondItem="1ZT-Tz-BtA" secondAttribute="bottom" constant="20" id="o0e-W9-dWl"/>
                             <constraint firstAttribute="trailing" secondItem="Bmx-oT-6PW" secondAttribute="trailing" id="oOY-nt-eI5"/>
                             <constraint firstItem="G1c-Ja-90z" firstAttribute="leading" secondItem="tsV-N3-3xq" secondAttribute="leading" constant="10" id="qw8-lL-AgQ"/>
                             <constraint firstAttribute="trailing" secondItem="7Mo-ql-8cf" secondAttribute="trailing" constant="10" id="r8U-fy-Gqj"/>
@@ -239,7 +239,7 @@
                 <outlet property="commentLabel" destination="h0i-xP-Pyq" id="ZEu-6w-euA"/>
                 <outlet property="commentView" destination="gFi-9c-SkM" id="dA2-rV-nF2"/>
                 <outlet property="commentViewHCon" destination="JhH-dk-ef9" id="Ei0-2u-xwA"/>
-                <outlet property="commentViewYCon" destination="o0e-W9-dWl" id="yOc-AM-AbQ"/>
+                <outlet property="commentViewYCon" destination="xCy-4o-wNZ" id="eNT-WG-OeV"/>
                 <outlet property="contentLabel" destination="68c-74-ah0" id="jRQ-RT-c5V"/>
                 <outlet property="descLabel" destination="cdQ-9r-gv0" id="CuW-yQ-xmq"/>
                 <outlet property="hateButton" destination="L73-bC-qoz" id="Mpu-DY-RU3"/>

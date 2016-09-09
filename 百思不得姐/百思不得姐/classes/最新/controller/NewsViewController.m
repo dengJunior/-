@@ -7,253 +7,38 @@
 //
 
 #import "NewsViewController.h"
-#import "NavTitleView.h"
-#import "MenuModel.h"
-#import "TestNewsViewController.h"
 
-@interface NewsViewController () <UIPageViewControllerDataSource>
-@property (nonatomic, strong) NSArray * vcArray;
 
-@property (nonatomic, strong ) UIPageViewController * pageVC;
-
+@interface NewsViewController ()
 @end
 
 @implementation NewsViewController
 
 
 
-- (NSArray *)vcArray{
-    
-    
-    
-    if (!_vcArray){
-        
-        
-        TestNewsViewController * testControl = [[TestNewsViewController alloc ] init ];
-        
-        
-        //        EssenceTableViewController * videoCtrl = [[EssenceTableViewController alloc ] init ];
-        UIViewController * videoCtrl = [[UIViewController alloc ] init ];
-        videoCtrl.view.backgroundColor = [UIColor redColor ];
-        
-        
-        
-        
-        
-        
-        
-        //        EssenceTableViewController * picCtrl = [[EssenceTableViewController alloc ] init ];
-        UIViewController * picCtrl = [[UIViewController alloc ] init ];
-        picCtrl.view.backgroundColor = [UIColor whiteColor ];
-        
-        
-        
-        
-        
-        
-        _vcArray = @[testControl, videoCtrl, picCtrl];
-        
-        
-        
-    }
-    
-    
-    
-    
-    
-    
-    return _vcArray;
-    
-    
-}
-
-
-
-
-
-//  subModel, 有什么用？
-- (void)setSubModel:(SubMenuModel *)subModel{
-    
-    _subModel = subModel;
-    
-    NSMutableArray * titles = [NSMutableArray array ];
-    
-    for ( NavTitleModel * tModel in subModel.submenus ){
-        
-        
-        [titles addObject: tModel.name ];
-        
-        
-        
-    }
-    
-    
-    __weak typeof (self) weakSelf = self;
-    
-    dispatch_async( dispatch_get_main_queue()  , ^{
-        
-        
-        NavTitleView * titleView = [[NavTitleView alloc ] initWithTitles:titles rightImageName:@"navigationButtonRandomN_26x26_" rightHighlightImageName:@"navigationButtonRandomClickN_26x26_"];
-        
-        [weakSelf.view addSubview: titleView ];
-        
-        
-        
-        [titleView mas_makeConstraints:^(MASConstraintMaker *make) {
-            
-            
-            make.top.equalTo(weakSelf.view).offset(20);
-            make.left.right.equalTo(weakSelf.view);
-            make.height.mas_equalTo(44);
-            
-            
-            
-        }];
-        
-        
-        
-        
-        
-        
-        
-    });
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-}
-
-
-
-
-
-
-
-
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.rightImageName = @"review_post_nav_iconN_20x17_";
+    
+    self.rightSelectImageName = @"review_post_nav_icon_clickN_20x17_";
+    
+    if (self.subModel) {
     
     
+        [self showData ];
     
-    
-    
-    self.view.backgroundColor = [UIColor colorWithWhite:240.0/255.0 alpha:1.0 ];
-    self.navigationController.navigationBarHidden = YES;
-    
-    UIPageViewController * pageVC = [[ UIPageViewController alloc  ] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal options:nil ]  ;
-    pageVC.dataSource = self;
-    
-    TestNewsViewController * testControl = [ self.vcArray  firstObject ];
-    
-    
-    
-    [pageVC setViewControllers: @[testControl] direction:UIPageViewControllerNavigationDirectionForward animated:NO completion: nil ];
-    
-    
-    [self.view addSubview: pageVC.view ];
-    
-    __weak typeof  (self) weakSelf = self ;
-    [pageVC.view mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        
-        make.edges.equalTo(weakSelf.view).with.insets(UIEdgeInsetsMake(64, 0, 49, 0));
-        
-        
-        
-        
-    }];
-    
-    
-    
-    
-    
-    
-    self.pageVC = pageVC;
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-}
-
-
-
-#pragma mark - Page Controller
-
-
-
-
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerAfterViewController:(UIViewController *)viewController{
-    
-    
-    
-    NSInteger curIndex = [self.vcArray indexOfObject: viewController ];
-    
-    
-    if ( curIndex < self.vcArray.count -1 ){
-        
-        TestNewsViewController * nextCtrl = self.vcArray[curIndex + 1];
-        
-        return nextCtrl;
-        
-        
-        
-        
     }
     
-    return nil;
-    
-}
-
-
-
-
-
-- (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController{
-    
-    
-    
-    NSInteger curIndex = [self.vcArray indexOfObject: viewController ];
-    
-    
-    if ( curIndex > 0 ){
-        
-        TestNewsViewController * preCtrl = self.vcArray[curIndex - 1];
-        
-        return preCtrl;
-        
-        
-        
-        
-    }
-    
-    return nil;
-    
     
     
     
     
     
 }
+
+
+
 
 
 
@@ -262,14 +47,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
 
 @end

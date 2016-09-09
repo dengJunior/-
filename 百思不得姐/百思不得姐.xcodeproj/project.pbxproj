@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2320536D1D811AF6008329D7 /* BDJNavTitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2320536C1D811AF6008329D7 /* BDJNavTitleViewController.m */; };
 		2325BEEA1D7EFF3C00250811 /* cellmorebtnnormal_24x20_@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2325BEE71D7EFF3C00250811 /* cellmorebtnnormal_24x20_@1x.png */; };
 		2325BEEB1D7EFF3C00250811 /* cellmorebtnnormal_24x20_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2325BEE81D7EFF3C00250811 /* cellmorebtnnormal_24x20_@2x.png */; };
 		2325BEEC1D7EFF3C00250811 /* cellmorebtnnormal_24x20_@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2325BEE91D7EFF3C00250811 /* cellmorebtnnormal_24x20_@3x.png */; };
@@ -34,7 +35,6 @@
 		237189611D7FF8CB005CAFBB /* navigationButtonRandomClickN_26x26_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2371894D1D7FF8CB005CAFBB /* navigationButtonRandomClickN_26x26_@2x.png */; };
 		237189621D7FF8CB005CAFBB /* navigationButtonRandomN_26x26_@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2371894E1D7FF8CB005CAFBB /* navigationButtonRandomN_26x26_@1x.png */; };
 		237189631D7FF8CB005CAFBB /* navigationButtonRandomN_26x26_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2371894F1D7FF8CB005CAFBB /* navigationButtonRandomN_26x26_@2x.png */; };
-		237189BE1D805557005CAFBB /* TestNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 237189BD1D805557005CAFBB /* TestNewsViewController.m */; };
 		2379CD5D1D7E952B0017E98B /* EssenceVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2379CD5B1D7E952B0017E98B /* EssenceVideoCell.m */; };
 		2379CD5E1D7E952B0017E98B /* EssenceVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2379CD5C1D7E952B0017E98B /* EssenceVideoCell.xib */; };
 		2379CD691D7E9B3A0017E98B /* cellmorebtnclick_24x20_@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2379CD601D7E9B3A0017E98B /* cellmorebtnclick_24x20_@1x.png */; };
@@ -46,6 +46,8 @@
 		2379CD6F1D7E9B3A0017E98B /* cellmorebtnnormalN_24x20_@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2379CD661D7E9B3A0017E98B /* cellmorebtnnormalN_24x20_@1x.png */; };
 		2379CD701D7E9B3A0017E98B /* cellmorebtnnormalN_24x20_@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2379CD671D7E9B3A0017E98B /* cellmorebtnnormalN_24x20_@2x.png */; };
 		2379CD711D7E9B3A0017E98B /* cellmorebtnnormalN_24x20_@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2379CD681D7E9B3A0017E98B /* cellmorebtnnormalN_24x20_@3x.png */; };
+		23A58E631D81866500233A5E /* EssenceTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23A58E601D81866500233A5E /* EssenceTextCell.xib */; };
+		23A58E641D81866500233A5E /* EssenceTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A58E611D81866500233A5E /* EssenceTextCell.m */; };
 		23BD0EE61D7FC0F800B0CA58 /* EssenceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BD0EE51D7FC0F800B0CA58 /* EssenceTableViewController.m */; };
 		23C80A0E1D7D004500D4710B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C80A0D1D7D004500D4710B /* main.m */; };
 		23C80A111D7D004500D4710B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C80A101D7D004500D4710B /* AppDelegate.m */; };
@@ -298,6 +300,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2320536B1D811AF6008329D7 /* BDJNavTitleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BDJNavTitleViewController.h; sourceTree = "<group>"; };
+		2320536C1D811AF6008329D7 /* BDJNavTitleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BDJNavTitleViewController.m; sourceTree = "<group>"; };
 		2325BEE71D7EFF3C00250811 /* cellmorebtnnormal_24x20_@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cellmorebtnnormal_24x20_@1x.png"; sourceTree = "<group>"; };
 		2325BEE81D7EFF3C00250811 /* cellmorebtnnormal_24x20_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cellmorebtnnormal_24x20_@2x.png"; sourceTree = "<group>"; };
 		2325BEE91D7EFF3C00250811 /* cellmorebtnnormal_24x20_@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cellmorebtnnormal_24x20_@3x.png"; sourceTree = "<group>"; };
@@ -329,8 +333,6 @@
 		2371894D1D7FF8CB005CAFBB /* navigationButtonRandomClickN_26x26_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationButtonRandomClickN_26x26_@2x.png"; sourceTree = "<group>"; };
 		2371894E1D7FF8CB005CAFBB /* navigationButtonRandomN_26x26_@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationButtonRandomN_26x26_@1x.png"; sourceTree = "<group>"; };
 		2371894F1D7FF8CB005CAFBB /* navigationButtonRandomN_26x26_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navigationButtonRandomN_26x26_@2x.png"; sourceTree = "<group>"; };
-		237189BC1D805557005CAFBB /* TestNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestNewsViewController.h; sourceTree = "<group>"; };
-		237189BD1D805557005CAFBB /* TestNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestNewsViewController.m; sourceTree = "<group>"; };
 		2379CD5A1D7E952B0017E98B /* EssenceVideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EssenceVideoCell.h; sourceTree = "<group>"; };
 		2379CD5B1D7E952B0017E98B /* EssenceVideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EssenceVideoCell.m; sourceTree = "<group>"; };
 		2379CD5C1D7E952B0017E98B /* EssenceVideoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EssenceVideoCell.xib; sourceTree = "<group>"; };
@@ -343,6 +345,9 @@
 		2379CD661D7E9B3A0017E98B /* cellmorebtnnormalN_24x20_@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cellmorebtnnormalN_24x20_@1x.png"; sourceTree = "<group>"; };
 		2379CD671D7E9B3A0017E98B /* cellmorebtnnormalN_24x20_@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cellmorebtnnormalN_24x20_@2x.png"; sourceTree = "<group>"; };
 		2379CD681D7E9B3A0017E98B /* cellmorebtnnormalN_24x20_@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cellmorebtnnormalN_24x20_@3x.png"; sourceTree = "<group>"; };
+		23A58E601D81866500233A5E /* EssenceTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EssenceTextCell.xib; sourceTree = "<group>"; };
+		23A58E611D81866500233A5E /* EssenceTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EssenceTextCell.m; sourceTree = "<group>"; };
+		23A58E621D81866500233A5E /* EssenceTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EssenceTextCell.h; sourceTree = "<group>"; };
 		23BD0EE41D7FC0F800B0CA58 /* EssenceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EssenceTableViewController.h; sourceTree = "<group>"; };
 		23BD0EE51D7FC0F800B0CA58 /* EssenceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EssenceTableViewController.m; sourceTree = "<group>"; };
 		23C80A091D7D004500D4710B /* 百思不得姐.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "百思不得姐.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -845,8 +850,6 @@
 			children = (
 				23C80A5F1D7D065300D4710B /* NewsViewController.h */,
 				23C80A601D7D065300D4710B /* NewsViewController.m */,
-				237189BC1D805557005CAFBB /* TestNewsViewController.h */,
-				237189BD1D805557005CAFBB /* TestNewsViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -915,6 +918,8 @@
 				23C80A5D1D7D063800D4710B /* EssenceViewController.m */,
 				23BD0EE41D7FC0F800B0CA58 /* EssenceTableViewController.h */,
 				23BD0EE51D7FC0F800B0CA58 /* EssenceTableViewController.m */,
+				2320536B1D811AF6008329D7 /* BDJNavTitleViewController.h */,
+				2320536C1D811AF6008329D7 /* BDJNavTitleViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -933,6 +938,9 @@
 		23C80A541D7D018900D4710B /* view */ = {
 			isa = PBXGroup;
 			children = (
+				23A58E621D81866500233A5E /* EssenceTextCell.h */,
+				23A58E611D81866500233A5E /* EssenceTextCell.m */,
+				23A58E601D81866500233A5E /* EssenceTextCell.xib */,
 				2379CD5A1D7E952B0017E98B /* EssenceVideoCell.h */,
 				2379CD5B1D7E952B0017E98B /* EssenceVideoCell.m */,
 				2379CD5C1D7E952B0017E98B /* EssenceVideoCell.xib */,
@@ -1377,6 +1385,7 @@
 				23C80BA71D7D072500D4710B /* header_cry_icon@2x.png in Resources */,
 				2379CD6B1D7E9B3A0017E98B /* cellmorebtnclick_24x20_@3x.png in Resources */,
 				2379CD6E1D7E9B3A0017E98B /* cellmorebtnclickN_24x20_@3x.png in Resources */,
+				23A58E631D81866500233A5E /* EssenceTextCell.xib in Resources */,
 				23C80BB21D7D072500D4710B /* friendsRecommentIcon.png in Resources */,
 				23C80C0D1D7D072500D4710B /* tabBar_me_icon@2x.png in Resources */,
 				23C80B5A1D7D072500D4710B /* cell-button-line.png in Resources */,
@@ -1692,13 +1701,14 @@
 				23C80A6A1D7D06B500D4710B /* ProfileViewController.m in Sources */,
 				23C80A5B1D7D061A00D4710B /* BaseViewController.m in Sources */,
 				23C80A111D7D004500D4710B /* AppDelegate.m in Sources */,
-				237189BE1D805557005CAFBB /* TestNewsViewController.m in Sources */,
 				2367F5B81D7D49DE00530B8B /* BDJDownloader.m in Sources */,
+				2320536D1D811AF6008329D7 /* BDJNavTitleViewController.m in Sources */,
 				23C80A671D7D069B00D4710B /* FollowViewController.m in Sources */,
 				2379CD5D1D7E952B0017E98B /* EssenceVideoCell.m in Sources */,
 				23C80A641D7D067000D4710B /* AddViewController.m in Sources */,
 				23C80C1D1D7D079F00D4710B /* MainTabBarController.m in Sources */,
 				23C80A611D7D065300D4710B /* NewsViewController.m in Sources */,
+				23A58E641D81866500233A5E /* EssenceTextCell.m in Sources */,
 				23C80A5E1D7D063800D4710B /* EssenceViewController.m in Sources */,
 				23C80A0E1D7D004500D4710B /* main.m in Sources */,
 			);

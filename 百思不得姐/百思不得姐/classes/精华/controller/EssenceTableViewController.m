@@ -11,8 +11,7 @@
 #import "EssenceModel.h"
 
 #import "EssenceVideoCell.h"
-
-
+#import "EssenceTextCell.h"
 
 @interface EssenceTableViewController ()  <UITableViewDelegate, UITableViewDataSource>
 
@@ -58,9 +57,6 @@
         
         
         make.edges.equalTo(weakSelf.view);
-        
-        
-        
         
         
     } ];
@@ -143,14 +139,19 @@
 - (void) downloadData{
     
     
-    NSString * urlString = [ NSString stringWithFormat: kEssenceVideoUrl  , self.lastTime ];
+    NSMutableString * urlString = [NSMutableString stringWithString: self.urlPrefix ];
     
-//    NSLog(@"%@",urlString);
+    [ urlString appendFormat: kEssenceSuffixURL, self.lastTime ];
+    
+    
+    
     
     __weak typeof (self) weakSelf = self;
     
     
-    
+    NSLog(@"\n%@", urlString);
+    //   http://s.budejie.com/topic/list/jingxuan/1/bs0315-iphone-4.3/0-20.json   视频
+
     
     [ BDJDownloader downloadWithUrlString:urlString finish:^(NSData *data) {
         
@@ -257,8 +258,8 @@
 
 
 
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (UITableViewCell *) createVideoCellForTableView: (UITableView *) tableView atIndexPath: (NSIndexPath *)indexPath{
+    
     
     
     static NSString * cellId = @"videoCellId";
@@ -284,7 +285,151 @@
     
     return  cell;
     
+
     
+    
+    
+    
+    
+}
+
+
+
+
+
+- (UITableViewCell *) createImageCellForTableView: (UITableView *) tableView atIndexPath: (NSIndexPath *)indexPath{
+    
+    
+    return [[UITableViewCell alloc ] init ];
+    
+    
+    
+}
+
+
+- (UITableViewCell *) createAudioCellForTableView: (UITableView *) tableView atIndexPath: (NSIndexPath *)indexPath{
+    
+    
+    return [[UITableViewCell alloc ] init ];
+    
+    
+    
+}
+
+
+
+- (UITableViewCell *) createTextCellForTableView: (UITableView *) tableView atIndexPath: (NSIndexPath *)indexPath{
+    
+    
+    static NSString * cellId = @"textCellId";
+    
+    EssenceTextCell * cell = [tableView dequeueReusableCellWithIdentifier: cellId ];
+    
+    if (nil == cell ){
+    
+        cell = [[[NSBundle mainBundle ] loadNibNamed:  @"EssenceTextCell"   owner:nil options:nil ]  lastObject ];
+    
+    
+    }
+    
+    ListModel * model = self.dataModel.list[indexPath.row ];
+    
+    
+    cell.model = model;
+    
+    
+    return cell;
+    
+    
+    
+    
+}
+
+
+- (UITableViewCell *) createGifCellForTableView: (UITableView *) tableView atIndexPath: (NSIndexPath *)indexPath{
+    
+    
+    return [[UITableViewCell alloc ] init ];
+    
+    
+    
+}
+
+
+
+- (UITableViewCell *) createHtmlCellForTableView: (UITableView *) tableView atIndexPath: (NSIndexPath *)indexPath{
+    
+    
+    return [[UITableViewCell alloc ] init ];
+    
+    
+    
+}
+
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    
+    UITableViewCell * cell = nil;
+    
+    ListModel * model = self.dataModel.list[indexPath.row];
+    
+    if ( [model.type isEqualToString: @"video"]  ){
+    
+        
+        
+        cell = [self createVideoCellForTableView:tableView atIndexPath:indexPath ];
+    
+    
+    
+    
+    }else if ( [model.type isEqualToString: @"image"] ){
+    
+        cell = [self createImageCellForTableView:tableView atIndexPath:indexPath ];
+    
+        
+    
+    
+    } else if ( [model.type isEqualToString: @"audio"] ){
+        
+        cell = [self createAudioCellForTableView:tableView atIndexPath:indexPath ];
+        
+        
+        
+        
+    }  else if ( [model.type isEqualToString: @"text"] ){
+        
+        cell = [self createTextCellForTableView:tableView atIndexPath:indexPath ];
+        
+        
+        
+        
+    }  else if ( [model.type isEqualToString: @"gif"] ){
+        
+        cell = [self createGifCellForTableView:tableView atIndexPath:indexPath ];
+        
+        
+        
+        
+    }  else if ( [model.type isEqualToString: @"html"] ){
+        
+        cell = [self createHtmlCellForTableView:tableView atIndexPath:indexPath ];
+        
+        
+        
+        
+    }else {
+    
+    
+        cell = [[UITableViewCell alloc ] init ];
+    
+    
+    }
+    
+    
+    
+    return cell;
 }
 
 
@@ -310,36 +455,7 @@
 
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    
-    
-    
-    
-    
-    
-    
     return 600;
-    
-    
 }
-
-
-
-
-
-
-
-
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
