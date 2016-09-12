@@ -12,6 +12,9 @@
 
 #import "EssenceVideoCell.h"
 #import "EssenceTextCell.h"
+#import "EssenceGifCell.h"
+#import "EssenceImageCell.h"
+#import "EssenceAudioCell.h"
 
 @interface EssenceTableViewController ()  <UITableViewDelegate, UITableViewDataSource>
 
@@ -300,8 +303,23 @@
 - (UITableViewCell *) createImageCellForTableView: (UITableView *) tableView atIndexPath: (NSIndexPath *)indexPath{
     
     
-    return [[UITableViewCell alloc ] init ];
+//    NSString * cellId = @"imageCellId";
+    static NSString * cellId = @"imageCellId";
     
+//    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier: cellId ];
+    
+    EssenceImageCell * cell = [tableView dequeueReusableCellWithIdentifier: cellId ];
+    
+    if (!cell){
+    
+    
+    
+        cell = [[[NSBundle mainBundle ] loadNibNamed: @"EssenceImageCell" owner:nil  options: nil ] lastObject ];
+    
+    }
+    
+    
+    return cell;
     
     
 }
@@ -310,7 +328,28 @@
 - (UITableViewCell *) createAudioCellForTableView: (UITableView *) tableView atIndexPath: (NSIndexPath *)indexPath{
     
     
-    return [[UITableViewCell alloc ] init ];
+    static NSString * cellId = @"audioCellId";
+    
+    
+    
+    EssenceAudioCell * cell = [tableView dequeueReusableCellWithIdentifier: cellId];
+    
+    
+    
+    if (!cell){
+        
+        
+        cell = [[[NSBundle mainBundle ] loadNibNamed: @"EssenceAudioCell"  owner:nil options:nil ] lastObject ];
+        
+    }
+    
+    
+    ListModel * model = self.dataModel.list[indexPath.row];
+    
+    
+    cell.model = model;
+    
+    return  cell;
     
     
     
@@ -349,9 +388,24 @@
 - (UITableViewCell *) createGifCellForTableView: (UITableView *) tableView atIndexPath: (NSIndexPath *)indexPath{
     
     
-    return [[UITableViewCell alloc ] init ];
+    static NSString * cellId = @"gifCellId";
+    
+    EssenceGifCell * cell = [tableView dequeueReusableCellWithIdentifier: cellId ];
+    
+    if (nil == cell ){
+        
+        cell = [[[NSBundle mainBundle ] loadNibNamed:  @"EssenceGifCell"   owner:nil options:nil ]  lastObject ];
+        
+        
+    }
+    
+    ListModel * model = self.dataModel.list[indexPath.row ];
     
     
+    cell.model = model;
+    
+    
+    return cell;
     
 }
 

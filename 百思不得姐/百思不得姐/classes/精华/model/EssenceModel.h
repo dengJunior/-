@@ -13,8 +13,9 @@
 @class UserModel;
 @class VideoModel;
 @class CommentModel;
-
-
+@class ImageModel;
+@class GifModel;
+@class AudioModel;
 @protocol ListModel;
 @protocol TagModel;
 @protocol NSString;
@@ -41,11 +42,6 @@
 @interface ListModel : JSONModel
 
 
-
-
-
-
-
 @property (nonatomic, assign) NSInteger status;
 @property (nonatomic, strong) NSString<Optional> * comment;
 
@@ -53,7 +49,7 @@
 @property (nonatomic, strong) NSArray<Optional, CommentModel> * top_comments;
 
 
-//@property (nonatomic, strong) NSArray<Optional, CommentModel> * top_comment;
+
 
 @property (nonatomic, strong) CommentModel<Optional> * top_comment;
 
@@ -83,16 +79,18 @@
 
 
 
-//@property (nonatomic, assign) CGFloat cellHeight;//后来 增加    ,   与 JSONModel 相冲突
-
-
-
-
-
-//@property (nonatomic, assign) NSNumber<Optional> * cellHeight;   这样 是 错的， 会崩溃的。  不能用 assign.
 @property (nonatomic, strong) NSNumber<Optional> * cellHeight;
 
+
+
+@property (nonatomic, strong) ImageModel<Optional> * image ;
+@property (nonatomic, strong) GifModel<Optional> * gif ;
+@property (nonatomic, strong) AudioModel<Optional> * audio;
+
+
 @end
+
+
 
 
 
@@ -157,6 +155,67 @@
 @end
 
 
+
+
+@interface ImageModel : JSONModel
+
+
+@property (nonatomic, strong) NSArray<Optional, NSString> * medium;
+@property (nonatomic, strong) NSArray<Optional, NSString> * big;
+@property (nonatomic, strong) NSArray<Optional, NSString> * download_url;
+
+
+@property (nonatomic, assign) NSInteger height;
+@property (nonatomic, assign) NSInteger width;
+@property (nonatomic, strong) NSArray<Optional, NSString> * small;
+
+
+@property (nonatomic, strong) NSArray<Optional, NSString> * thumbnail_small;
+
+
+
+@end
+
+
+
+
+@interface AudioModel : JSONModel
+
+
+@property (nonatomic, assign) NSInteger playfcount;
+@property (nonatomic, strong) NSArray<Optional, NSString> * download_url;
+@property (nonatomic, assign) NSInteger height;
+
+
+@property (nonatomic, assign) NSInteger width;
+@property (nonatomic, assign) NSInteger duration;
+@property (nonatomic, assign) NSInteger playcount;
+
+
+
+@property (nonatomic, strong) NSArray<Optional, NSString> * audio;
+@property (nonatomic, strong) NSArray<Optional, NSString> * thumbnail;
+@property (nonatomic, strong) NSArray<Optional, NSString> * thumbnail_small;
+
+
+
+@end
+
+
+
+@interface GifModel : JSONModel
+
+
+@property (nonatomic, strong) NSArray<Optional, NSString> * images;
+@property (nonatomic, assign) NSInteger width;
+@property (nonatomic, strong) NSArray<Optional, NSString> * gif_thumbnail;
+
+
+@property (nonatomic, strong) NSArray<Optional, NSString> * download_url;
+@property (nonatomic, assign) NSInteger height;
+
+
+@end
 
 
 

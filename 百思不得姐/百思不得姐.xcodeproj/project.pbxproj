@@ -48,6 +48,12 @@
 		2379CD711D7E9B3A0017E98B /* cellmorebtnnormalN_24x20_@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2379CD681D7E9B3A0017E98B /* cellmorebtnnormalN_24x20_@3x.png */; };
 		23A58E631D81866500233A5E /* EssenceTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23A58E601D81866500233A5E /* EssenceTextCell.xib */; };
 		23A58E641D81866500233A5E /* EssenceTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A58E611D81866500233A5E /* EssenceTextCell.m */; };
+		23A855741D86C07A007E86CD /* EssenceAudioCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23A8556B1D86C07A007E86CD /* EssenceAudioCell.xib */; };
+		23A855751D86C07A007E86CD /* EssenceImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A8556C1D86C07A007E86CD /* EssenceImageCell.m */; };
+		23A855761D86C07A007E86CD /* EssenceImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23A8556D1D86C07A007E86CD /* EssenceImageCell.xib */; };
+		23A855771D86C07A007E86CD /* EssenceGifCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23A855701D86C07A007E86CD /* EssenceGifCell.xib */; };
+		23A855781D86C07A007E86CD /* EssenceAudioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A855711D86C07A007E86CD /* EssenceAudioCell.m */; };
+		23A855791D86C07A007E86CD /* EssenceGifCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 23A855721D86C07A007E86CD /* EssenceGifCell.m */; };
 		23BD0EE61D7FC0F800B0CA58 /* EssenceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BD0EE51D7FC0F800B0CA58 /* EssenceTableViewController.m */; };
 		23C80A0E1D7D004500D4710B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C80A0D1D7D004500D4710B /* main.m */; };
 		23C80A111D7D004500D4710B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 23C80A101D7D004500D4710B /* AppDelegate.m */; };
@@ -348,6 +354,15 @@
 		23A58E601D81866500233A5E /* EssenceTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EssenceTextCell.xib; sourceTree = "<group>"; };
 		23A58E611D81866500233A5E /* EssenceTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EssenceTextCell.m; sourceTree = "<group>"; };
 		23A58E621D81866500233A5E /* EssenceTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EssenceTextCell.h; sourceTree = "<group>"; };
+		23A8556B1D86C07A007E86CD /* EssenceAudioCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EssenceAudioCell.xib; sourceTree = "<group>"; };
+		23A8556C1D86C07A007E86CD /* EssenceImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EssenceImageCell.m; sourceTree = "<group>"; };
+		23A8556D1D86C07A007E86CD /* EssenceImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EssenceImageCell.xib; sourceTree = "<group>"; };
+		23A8556E1D86C07A007E86CD /* EssenceAudioCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EssenceAudioCell.h; sourceTree = "<group>"; };
+		23A8556F1D86C07A007E86CD /* EssenceGifCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EssenceGifCell.h; sourceTree = "<group>"; };
+		23A855701D86C07A007E86CD /* EssenceGifCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EssenceGifCell.xib; sourceTree = "<group>"; };
+		23A855711D86C07A007E86CD /* EssenceAudioCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EssenceAudioCell.m; sourceTree = "<group>"; };
+		23A855721D86C07A007E86CD /* EssenceGifCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EssenceGifCell.m; sourceTree = "<group>"; };
+		23A855731D86C07A007E86CD /* EssenceImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EssenceImageCell.h; sourceTree = "<group>"; };
 		23BD0EE41D7FC0F800B0CA58 /* EssenceTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EssenceTableViewController.h; sourceTree = "<group>"; };
 		23BD0EE51D7FC0F800B0CA58 /* EssenceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EssenceTableViewController.m; sourceTree = "<group>"; };
 		23C80A091D7D004500D4710B /* 百思不得姐.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "百思不得姐.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -938,6 +953,15 @@
 		23C80A541D7D018900D4710B /* view */ = {
 			isa = PBXGroup;
 			children = (
+				23A855731D86C07A007E86CD /* EssenceImageCell.h */,
+				23A8556C1D86C07A007E86CD /* EssenceImageCell.m */,
+				23A8556D1D86C07A007E86CD /* EssenceImageCell.xib */,
+				23A8556E1D86C07A007E86CD /* EssenceAudioCell.h */,
+				23A855711D86C07A007E86CD /* EssenceAudioCell.m */,
+				23A8556B1D86C07A007E86CD /* EssenceAudioCell.xib */,
+				23A8556F1D86C07A007E86CD /* EssenceGifCell.h */,
+				23A855721D86C07A007E86CD /* EssenceGifCell.m */,
+				23A855701D86C07A007E86CD /* EssenceGifCell.xib */,
 				23A58E621D81866500233A5E /* EssenceTextCell.h */,
 				23A58E611D81866500233A5E /* EssenceTextCell.m */,
 				23A58E601D81866500233A5E /* EssenceTextCell.xib */,
@@ -1400,6 +1424,7 @@
 				23C80BC01D7D072500D4710B /* mine-moon-icon.png in Resources */,
 				23C80B6C1D7D072500D4710B /* imageBackground.png in Resources */,
 				23C80B811D7D072500D4710B /* playButton.png in Resources */,
+				23A855761D86C07A007E86CD /* EssenceImageCell.xib in Resources */,
 				23C80BC81D7D072500D4710B /* mine-setting-icon@3x.png in Resources */,
 				23C80BB81D7D072500D4710B /* MainTagSubIconClick.png in Resources */,
 				23C80BCF1D7D072500D4710B /* nav_coin_icon.png in Resources */,
@@ -1410,6 +1435,7 @@
 				23C80BDA1D7D072500D4710B /* navigationButtonReturnClick@2x.png in Resources */,
 				23C80BAC1D7D072500D4710B /* LaunchImage-800-Portrait-736h@3x.png in Resources */,
 				23C80BC51D7D072500D4710B /* mine-setting-icon-click@3x.png in Resources */,
+				23A855741D86C07A007E86CD /* EssenceAudioCell.xib in Resources */,
 				23C80BF51D7D072500D4710B /* pushguidemid.png in Resources */,
 				23C80BE31D7D072500D4710B /* publish-offline@2x.png in Resources */,
 				23C80BA01D7D072500D4710B /* FollowBtnClickBg.png in Resources */,
@@ -1590,6 +1616,7 @@
 				23C80BC71D7D072500D4710B /* mine-setting-icon@2x.png in Resources */,
 				23C80B571D7D072500D4710B /* AppIcon72x72~ipad.png in Resources */,
 				23C80B821D7D072500D4710B /* playButton@2x.png in Resources */,
+				23A855771D86C07A007E86CD /* EssenceGifCell.xib in Resources */,
 				237189611D7FF8CB005CAFBB /* navigationButtonRandomClickN_26x26_@2x.png in Resources */,
 				23C80BA41D7D072500D4710B /* friendsTrend_login_click.png in Resources */,
 				23C80BB61D7D072500D4710B /* MainTagSubIcon@2x.png in Resources */,
@@ -1704,13 +1731,16 @@
 				2367F5B81D7D49DE00530B8B /* BDJDownloader.m in Sources */,
 				2320536D1D811AF6008329D7 /* BDJNavTitleViewController.m in Sources */,
 				23C80A671D7D069B00D4710B /* FollowViewController.m in Sources */,
+				23A855781D86C07A007E86CD /* EssenceAudioCell.m in Sources */,
 				2379CD5D1D7E952B0017E98B /* EssenceVideoCell.m in Sources */,
 				23C80A641D7D067000D4710B /* AddViewController.m in Sources */,
 				23C80C1D1D7D079F00D4710B /* MainTabBarController.m in Sources */,
 				23C80A611D7D065300D4710B /* NewsViewController.m in Sources */,
 				23A58E641D81866500233A5E /* EssenceTextCell.m in Sources */,
 				23C80A5E1D7D063800D4710B /* EssenceViewController.m in Sources */,
+				23A855751D86C07A007E86CD /* EssenceImageCell.m in Sources */,
 				23C80A0E1D7D004500D4710B /* main.m in Sources */,
+				23A855791D86C07A007E86CD /* EssenceGifCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

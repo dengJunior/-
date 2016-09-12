@@ -77,11 +77,26 @@
 
 
 
+@implementation GifModel
+
+
+@end
+
+
+@implementation ImageModel
+
+@end
+
+
 
 
 @implementation UserModel
 @end
 
+
+@implementation AudioModel
+
+@end
 
 
 

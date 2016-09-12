@@ -7,15 +7,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="textCellId" id="KGk-i7-Jjw" customClass="EssenceTextCell">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="260"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="gifCellId" id="KGk-i7-Jjw" customClass="EssenceGifCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="259"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="399"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tsV-N3-3xq">
-                        <rect key="frame" x="0.0" y="10" width="375" height="249"/>
+                        <rect key="frame" x="0.0" y="10" width="375" height="389"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zCS-En-jGg" userLabel="userImageView">
                                 <rect key="frame" x="10" y="6" width="30" height="30"/>
@@ -59,8 +59,14 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7Mo-ql-8cf" userLabel="gifImageView">
+                                <rect key="frame" x="10" y="85" width="355" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="8N1-9n-fS2"/>
+                                </constraints>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gFi-9c-SkM" userLabel="commentView">
-                                <rect key="frame" x="10" y="85" width="355" height="50"/>
+                                <rect key="frame" x="10" y="219" width="355" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0i-xP-Pyq" userLabel="commentLabel">
                                         <rect key="frame" x="24" y="4" width="321" height="21"/>
@@ -78,7 +84,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G1c-Ja-90z" userLabel="tagView">
-                                <rect key="frame" x="10" y="149" width="355" height="40"/>
+                                <rect key="frame" x="10" y="283" width="355" height="40"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tagicon.png" translatesAutoresizingMaskIntoConstraints="NO" id="vjP-Wo-Ye4">
                                         <rect key="frame" x="10" y="10" width="20" height="20"/>
@@ -105,7 +111,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DK7-Qn-KUR" userLabel="loveBtn">
-                                <rect key="frame" x="0.0" y="189" width="94" height="40"/>
+                                <rect key="frame" x="0.0" y="323" width="94" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="PH4-ZM-KlU"/>
                                 </constraints>
@@ -118,7 +124,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L73-bC-qoz" userLabel="hateBtn">
-                                <rect key="frame" x="94" y="189" width="94" height="40"/>
+                                <rect key="frame" x="94" y="323" width="94" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="踩" image="mainCellCai.png">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -128,7 +134,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAE-5d-Wr0" userLabel="shareBtn">
-                                <rect key="frame" x="188" y="189" width="93" height="40"/>
+                                <rect key="frame" x="188" y="323" width="93" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="分享" image="mainCellShare.png">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -138,7 +144,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bmx-oT-6PW" userLabel="commentBtn">
-                                <rect key="frame" x="281" y="189" width="94" height="40"/>
+                                <rect key="frame" x="281" y="323" width="94" height="40"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="评论" image="mainCellComment.png">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -151,6 +157,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="L73-bC-qoz" firstAttribute="top" secondItem="G1c-Ja-90z" secondAttribute="bottom" id="10b-9Y-Btj"/>
+                            <constraint firstItem="7Mo-ql-8cf" firstAttribute="top" secondItem="68c-74-ah0" secondAttribute="bottom" constant="14" id="3Pb-XX-FlL"/>
                             <constraint firstItem="L73-bC-qoz" firstAttribute="height" secondItem="DK7-Qn-KUR" secondAttribute="height" id="6c4-f1-hb2"/>
                             <constraint firstItem="Nae-9P-4QW" firstAttribute="top" secondItem="tsV-N3-3xq" secondAttribute="top" constant="6" id="7cE-Ci-gyZ"/>
                             <constraint firstAttribute="trailing" secondItem="ksO-x3-Ih0" secondAttribute="trailing" constant="20" id="7dt-fv-N80"/>
@@ -162,6 +169,7 @@
                             <constraint firstItem="DK7-Qn-KUR" firstAttribute="top" secondItem="G1c-Ja-90z" secondAttribute="bottom" id="JO2-Bs-Ixh"/>
                             <constraint firstItem="L73-bC-qoz" firstAttribute="leading" secondItem="DK7-Qn-KUR" secondAttribute="trailing" id="MRc-Jb-UWA"/>
                             <constraint firstAttribute="trailing" secondItem="G1c-Ja-90z" secondAttribute="trailing" constant="10" id="MTa-AB-HND"/>
+                            <constraint firstItem="7Mo-ql-8cf" firstAttribute="leading" secondItem="tsV-N3-3xq" secondAttribute="leading" constant="10" id="WA2-hx-dfr"/>
                             <constraint firstItem="xAE-5d-Wr0" firstAttribute="width" secondItem="DK7-Qn-KUR" secondAttribute="width" id="YCH-ZO-psD"/>
                             <constraint firstItem="gFi-9c-SkM" firstAttribute="leading" secondItem="tsV-N3-3xq" secondAttribute="leading" constant="10" id="ZEU-gl-1HL"/>
                             <constraint firstItem="Bmx-oT-6PW" firstAttribute="height" secondItem="DK7-Qn-KUR" secondAttribute="height" id="ZPj-8X-sw4"/>
@@ -171,12 +179,13 @@
                             <constraint firstItem="Bmx-oT-6PW" firstAttribute="top" secondItem="G1c-Ja-90z" secondAttribute="bottom" id="cht-Ct-RWQ"/>
                             <constraint firstItem="Nae-9P-4QW" firstAttribute="leading" secondItem="zCS-En-jGg" secondAttribute="trailing" constant="10" id="inO-93-TcM"/>
                             <constraint firstItem="Bmx-oT-6PW" firstAttribute="leading" secondItem="xAE-5d-Wr0" secondAttribute="trailing" id="j0S-7k-TpG"/>
+                            <constraint firstItem="7Mo-ql-8cf" firstAttribute="top" secondItem="68c-74-ah0" secondAttribute="bottom" constant="14" id="jX3-0K-Ff9"/>
                             <constraint firstItem="xAE-5d-Wr0" firstAttribute="height" secondItem="DK7-Qn-KUR" secondAttribute="height" id="jhD-38-Oaz"/>
                             <constraint firstAttribute="trailing" secondItem="68c-74-ah0" secondAttribute="trailing" constant="10" id="mlc-hL-FC8"/>
                             <constraint firstItem="68c-74-ah0" firstAttribute="top" secondItem="cdQ-9r-gv0" secondAttribute="bottom" constant="14" id="nzD-Ez-ks5"/>
                             <constraint firstAttribute="trailing" secondItem="Bmx-oT-6PW" secondAttribute="trailing" id="oOY-nt-eI5"/>
-                            <constraint firstItem="gFi-9c-SkM" firstAttribute="top" secondItem="68c-74-ah0" secondAttribute="bottom" constant="14" id="oPh-UV-zGy"/>
                             <constraint firstItem="G1c-Ja-90z" firstAttribute="leading" secondItem="tsV-N3-3xq" secondAttribute="leading" constant="10" id="qw8-lL-AgQ"/>
+                            <constraint firstAttribute="trailing" secondItem="7Mo-ql-8cf" secondAttribute="trailing" constant="10" id="r8U-fy-Gqj"/>
                             <constraint firstAttribute="trailing" secondItem="gFi-9c-SkM" secondAttribute="trailing" constant="10" id="rBb-j6-qZq"/>
                             <constraint firstItem="L73-bC-qoz" firstAttribute="width" secondItem="DK7-Qn-KUR" secondAttribute="width" id="s18-4R-KLZ"/>
                             <constraint firstItem="cdQ-9r-gv0" firstAttribute="top" secondItem="Nae-9P-4QW" secondAttribute="bottom" id="sGQ-Nx-oyr"/>
@@ -184,6 +193,7 @@
                             <constraint firstItem="68c-74-ah0" firstAttribute="top" secondItem="zCS-En-jGg" secondAttribute="bottom" constant="14" id="uvo-4d-cfw"/>
                             <constraint firstItem="G1c-Ja-90z" firstAttribute="top" secondItem="gFi-9c-SkM" secondAttribute="bottom" constant="14" id="vXs-lF-Eqx"/>
                             <constraint firstItem="xAE-5d-Wr0" firstAttribute="top" secondItem="G1c-Ja-90z" secondAttribute="bottom" id="wqI-Qf-lV1"/>
+                            <constraint firstItem="gFi-9c-SkM" firstAttribute="top" secondItem="7Mo-ql-8cf" secondAttribute="bottom" constant="14" id="xCy-4o-wNZ"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -200,8 +210,11 @@
                 <outlet property="commentLabel" destination="h0i-xP-Pyq" id="ZEu-6w-euA"/>
                 <outlet property="commentView" destination="gFi-9c-SkM" id="dA2-rV-nF2"/>
                 <outlet property="commentViewHCon" destination="JhH-dk-ef9" id="Ei0-2u-xwA"/>
+                <outlet property="commentViewYCon" destination="xCy-4o-wNZ" id="eNT-WG-OeV"/>
                 <outlet property="contentLabel" destination="68c-74-ah0" id="jRQ-RT-c5V"/>
                 <outlet property="descLabel" destination="cdQ-9r-gv0" id="CuW-yQ-xmq"/>
+                <outlet property="gifImageHCon" destination="8N1-9n-fS2" id="lh6-4A-zEf"/>
+                <outlet property="gifImageView" destination="7Mo-ql-8cf" id="XDr-kP-hOE"/>
                 <outlet property="hateButton" destination="L73-bC-qoz" id="Mpu-DY-RU3"/>
                 <outlet property="loveButton" destination="DK7-Qn-KUR" id="Q2Y-oe-oRB"/>
                 <outlet property="nameLabel" destination="Nae-9P-4QW" id="FZA-tz-NEw"/>
